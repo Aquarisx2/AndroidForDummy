@@ -13,6 +13,43 @@ public class SecondActivity extends AppCompatActivity {
     private EditText mReply;
     private static final String LOG_TAG = SecondActivity.class.getSimpleName();
     @Override
+    public void onStart() {
+        super.onStart();
+        Log.d(LOG_TAG, "onStart");
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(LOG_TAG, "onPause");
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(LOG_TAG, "onResume");
+    }
+
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        Log.d(LOG_TAG, "onRestart");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(LOG_TAG, "onStop");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.d(LOG_TAG, "onDestroy");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(LOG_TAG, "Start second activity");
         super.onCreate(savedInstanceState);
@@ -30,6 +67,7 @@ public class SecondActivity extends AppCompatActivity {
         Intent replyIntent = new Intent();
         replyIntent.putExtra(EXTRA_REPLY, reply);
         setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
         finish();
     }
 }
